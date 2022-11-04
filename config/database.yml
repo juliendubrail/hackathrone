@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: hackathrone_production
   username: hackathrone
   password: <%= ENV["HACKATHRONE_DATABASE_PASSWORD"] %>
