@@ -1,0 +1,31 @@
+<%= form_with model: @product do |form| %>
+    <% @product.errors.full_messages.each do |error| %>
+      <div>
+        <%= error %>
+      </div>
+    <% end %>
+  
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+  
+    <div>
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
+
+    <div>
+        <%= form.label :photo %>
+        <%= form.file_field :photo %>
+    </div>
+  
+    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        <%= form.submit %>
+    </button>
+  <% end %>
